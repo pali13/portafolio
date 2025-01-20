@@ -41,7 +41,7 @@ export const curriculumData = {
       },
       {
         position: "Programador Junior (Pasantía)",
-        company: "WIS Soluciones en Logística",
+        company: "WIS Soluciones de Software en Logística",
         period: "2024",
       },
       {
@@ -63,8 +63,8 @@ export const curriculumData = {
   references: {
     title: "Referencias Laborales",
     peoples: [
-      { name: "Jaime Cohen", relation: "Jefe", contact: "094417967" },
-      { name: "Margarita Ruiz", relation: "Jefa", contact: "099 810 857" },
+      { name: "Milton Roviglio", relation: "Jefe", contact: "096 959 944" },
+      { name: "Pablo Granero", relation: "Jefe", contact: "099 218 991" },
       { name: "Matías Lecuna", relation: "Compañero", contact: "091 099 274" },
     ],
   }

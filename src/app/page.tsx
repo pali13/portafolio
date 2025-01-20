@@ -2,7 +2,7 @@
 
 import useWindowWidth from "./hooks/widthHooks";
 
-const text: string = "Egresado de la carrera de tecnologo en informática, esta carrera tiene un enfoque grande en lo que es la programación. Tengo varios proyectos personales en los que he estado trabajando este último tiempo así también como proyectos curriculares de mediano y gran porte."
+const text: string = "Soy Tecnólogo en Informática con experiencia en desarrollo de proyectos utilizando tecnologías como React, Next.js, Tailwind CSS, Spring Boot, etc. Me destaco por mi capacidad de trabajo en equipo, adaptabilidad y enfoque en resultados. Busco aportar mis conocimientos técnicos mientras continúo creciendo profesionalmente y contribuyo al éxito de la organización."
 
 export default function Home() {
   const width = useWindowWidth();
