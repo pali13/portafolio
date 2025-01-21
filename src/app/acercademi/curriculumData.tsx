@@ -1,7 +1,7 @@
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
 
 export const curriculumData = {
-  profileImage: "/ProfileImage.png",
+  profileImage: "/images/ProfileImage.png",
   phone: {
     icon: <PhoneIcon className="h-10 w-10 mb-2" />,
     number: "096 118 665",

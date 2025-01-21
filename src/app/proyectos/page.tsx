@@ -8,34 +8,40 @@ import { ImageCarouselModal } from "../components/image-carousel-modal";
 
 const projects = [
   {
-    name: "Los Ceibos Jardines - Frontend",
+    name: "Los Ceibos Jardines",
     description: "Aplicacíon para la gestión de clientes y administración de parques, orientado a empresa de jardinería, realizado en React con typescript",
-    repo: "https://github.com/pali13/pali13-los-ceibos-jardines-frontend"
+    repo: "https://github.com/pali13/pali13-los-ceibos-jardines-frontend",
+    type: "frontend"
   },
   {
-    name: "Los Ceibos Jardines - Backend",
+    name: "Los Ceibos Jardines",
     description: "Backend con registro de usuarios, parques, facturas, pagos, planificación de horarios y generación de PDFs, realizado en Java con Spring boot, JWT, lombok",
-    repo: "https://github.com/pali13/pali13-los-ceibos-jardines-backend"
+    repo: "https://github.com/pali13/pali13-los-ceibos-jardines-backend",
+    type: "backend"
   },
   {
-    name: "Control de consumo en el Hogar - Frontend",
+    name: "Control de consumo en el Hogar",
     description: "Aplicación web para el control del consumo de aparatos electrónicos en el hogar, con diferentes tipos de tarifas y horarios",
-    repo: "https://github.com/pali13/energy-consumption-tracker"
+    repo: "https://github.com/pali13/energy-consumption-tracker",
+    type: "frontend"
   },
   {
-    name: "Control de consumo en el Hogar - Backend",
+    name: "Control de consumo en el Hogar",
     description: "Backend para el proyecto del control de consumo de aparatos electrónicos en el hogar y con registro de usuario",
-    repo: "https://github.com/pali13/energy-consumption-tracker-backend"
+    repo: "https://github.com/pali13/energy-consumption-tracker-backend",
+    type: "backend"
   },
   {
-    name: "Ecommerce - Frontend",
+    name: "Ecommerce",
     description: "Aplicación web para la gestión de un ecommerce con diferentes roles de usuarios y experiencías de usuarios según el rol",
-    repo: "https://github.com/pali13/pali13-los-ceibos-jardines-backend"
+    repo: "https://github.com/pali13/pali13-los-ceibos-jardines-backend",
+    type: "frontend"
   },
   {
-    name: "Ecommerce - Backend",
+    name: "Ecommerce",
     description: "Backend para el registro de usuarios, productos y todo lo necesario para el manejo del ecommerce",
-    repo: "https://github.com/pali13/ecommerce"
+    repo: "https://github.com/pali13/ecommerce",
+    type: "backend"
   },
 ]
 
@@ -59,49 +65,49 @@ export default function ProjectsPage() {
   const [modal, setModal] = useState(false);
 
   return (
-    <div className={`${width > 750 && 'w-3/5 mx-auto'}`}>
-      <div className="mt-28">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md rounded-lg p-2 mx-2 hover:shadow-lg transition"
-            >
-              <h2 className="text-lg font-bold text-blue-800">{project.name}</h2>
-              <p className="text-gray-600 mb-4">{project.description}</p>
+    <div className={`mt-16 ${width > 750 ? "w-4/5 mx-auto" : "px-4"}`}>
+      <h1 className="text-center text-4xl font-bold text-white mb-10">Proyectos</h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition"
+          >
+            <h2 className="text-xl font-semibold text-blue-400">{project.name}</h2>
+            <p className="text-gray-300 my-2">{project.description}</p>
+            <div className="flex items-center justify-between mt-4">
+              <span className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm">
+                {project.type}
+              </span>
               <button
                 onClick={() => project.repo && router.push(project.repo)}
-                title="Abrir repositorio"
                 className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
               >
-                <ArrowTopRightOnSquareIcon className="w-5 h-5" /> Abrir
+                <ArrowTopRightOnSquareIcon className="w-5 h-5" /> Repositorio
               </button>
             </div>
-          ))}
-          <div
-            className="bg-white shadow-md rounded-lg p-2 mx-2 hover:shadow-lg transition"
-          >
-            <h2 className="text-lg font-bold text-blue-800">{privateProyects.name}</h2>
-            <p className="text-gray-600 mb-4">{privateProyects.description}</p>
-            <p className="text-gray-600 mb-4">Proyecto para una empresa privada por lo tanto no se puede publicar el código</p>
-            <button
-              onClick={() => setModal(true)}
-              title="Ver imágenes"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >
-              Ver fotos
-            </button>
           </div>
+        ))}
+        <div className="bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+          <h2 className="text-xl font-semibold text-blue-400">{privateProyects.name}</h2>
+          <p className="text-gray-300 my-2">{privateProyects.description}</p>
+          <p className="text-gray-300">Proyecto para una empresa privada, código no disponible.</p>
+          <button
+            onClick={() => setModal(true)}
+            className="mt-4 flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          >
+            Ver imágenes
+          </button>
         </div>
-        {modal && (
+      </div>
+      {modal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6">
-            <h1 className="text-3xl font-bold mb-6">Galería de Imágenes</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center">Galería de Imágenes</h1>
             <ImageCarouselModal images={images} setModal={setModal} modal={modal} />
           </div>
         </div>
       )}
-      </div>
     </div>
   );
 }
