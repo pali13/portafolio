@@ -7,7 +7,7 @@ import { curriculumData } from './curriculumData';
 
 const Curriculum = () => {
     const handleDownload = () => {
-        saveAs('/curriculum/Currículum Pablo Suárez.pdf', 'Curriculum_Pablo_Suarez.pdf');
+        saveAs('/curriculum/Curriculum Pablo Suárez.pdf', 'Curriculum_Pablo_Suarez.pdf');
     };
 
     return (
